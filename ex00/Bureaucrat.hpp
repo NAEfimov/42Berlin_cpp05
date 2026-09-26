@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:35:04 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/26 15:05:55 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/26 15:15:53 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Bureaucrat {
     
     std::string getName() const;
     int         getGrade() const;
-    Bureaucrat& inc();
-    Bureaucrat& dec();
+    Bureaucrat& incrementGrade();
+    Bureaucrat& decrementGrade();
 
     class GradeTooHighException : public std::exception {
       public:

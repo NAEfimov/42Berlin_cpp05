@@ -6,21 +6,18 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:35:01 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/26 15:09:58 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/26 22:26:20 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
-    if (grade > 150)
-    {
-        std::cout << "Grade too low" << std::endl;
+    if (grade > 150) {
+        throw GradeTooLowException();
     }
-    else if (grade < 1)
-    {
-        std::cout << "Grade too hight" << std::endl;
+    else if (grade < 1) {
+        throw GradeTooHighException();
     }
     this->_grade = grade;
 }
@@ -38,18 +35,16 @@ int Bureaucrat::getGrade() const {
     return (_grade);    
 }
     
-Bureaucrat& Bureaucrat::inc() {
+Bureaucrat& Bureaucrat::incrementGrade() {
     if (_grade - 1 < 1) {
-        std::cout << "Grade too hight" << std::endl;
-        return (*this);
+        throw GradeTooHighException();
     }
     _grade = _grade - 1;
     return (*this);
 }
-Bureaucrat& Bureaucrat::dec() {
+Bureaucrat& Bureaucrat::decrementGrade() {
     if (_grade + 1 > 150) {
-        std::cout << "Grade too low" << std::endl;
-        return (*this);
+        throw GradeTooLowException();
     }
     _grade = _grade + 1;
     return (*this);
