@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:35:01 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/26 22:26:20 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/27 18:04:32 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) :
     _name(other._name), _grade(other._grade) {}
 
 Bureaucrat::~Bureaucrat() {}
-    
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
+    if (this != &other) {
+        _grade = other._grade;
+    }
+    return (*this);
+}
+
 std::string Bureaucrat::getName() const {
     return (_name);
 }
@@ -35,19 +42,17 @@ int Bureaucrat::getGrade() const {
     return (_grade);    
 }
     
-Bureaucrat& Bureaucrat::incrementGrade() {
+void Bureaucrat::incrementGrade() {
     if (_grade - 1 < 1) {
         throw GradeTooHighException();
     }
     _grade = _grade - 1;
-    return (*this);
 }
-Bureaucrat& Bureaucrat::decrementGrade() {
+void Bureaucrat::decrementGrade() {
     if (_grade + 1 > 150) {
         throw GradeTooLowException();
     }
     _grade = _grade + 1;
-    return (*this);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
