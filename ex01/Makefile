@@ -21,7 +21,8 @@ NAME		:= bureaucrat
 INCS		:= .
 
 SRCS		:=	main.cpp	\
-				Bureaucrat.cpp
+				Bureaucrat.cpp \
+				Form.cpp
 
 OBJ_DIR		:= obj
 OBJS		:= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
