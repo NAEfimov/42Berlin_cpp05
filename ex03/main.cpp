@@ -22,35 +22,17 @@
 
 int main(void)
 {
-    Bureaucrat president("President", 1);
-    Bureaucrat manager("Manager", 46);
-    Bureaucrat gardener("Gardener", 138);
-    std::cout << std::endl;
+    Intern intern;
+    AForm *form;
 
-    ShrubberyCreationForm shrubbery("test");
-    RobotomyRequestForm robotomy("Bender");
-    PresidentialPardonForm pardon("Arthur Dent");
-    std::cout << std::endl;
-
-    shrubbery.signForm(gardener);
-    std::cout << "---------" << std::endl;
-    gardener.executeForm(shrubbery);
-    manager.executeForm(shrubbery);
-    std::cout << std::endl;
-
-    std::srand(std::time(NULL));
-    robotomy.signForm(gardener);
-    robotomy.signForm(manager);
-    std::cout << "---------" << std::endl;
-    manager.executeForm(robotomy);
-    president.executeForm(robotomy);
-    std::cout << std::endl;
-
-    pardon.signForm(gardener);
-    pardon.signForm(manager);
-    pardon.signForm(president);
-    std::cout << "---------" << std::endl;
-    president.executeForm(pardon);
+    form = intern.makeForm("shrubbery creation", "garden");
+    delete form;
+    form = intern.makeForm("robotomy request", "Bender");
+    delete form;
+    form = intern.makeForm("presidential pardon", "Arthur Dent");
+    delete form;
+    form = intern.makeForm("coffee request", "office");
+    delete form;
 
     return 0;
 }
