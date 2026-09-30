@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:34:46 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/28 00:08:48 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/30 23:34:12 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,6 @@ void test_decrement_grade() {
         std::cout << " > " << e.what() << std::endl;
     } 
 }
-
-// void test_() {
-//     std::cout << "*** " << "test_" << " ***\n";
-// }
 
 int main(void)
 {
