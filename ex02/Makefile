@@ -70,6 +70,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) *_shrubbery
 
 re:
 	$(MAKE) fclean
