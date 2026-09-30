@@ -6,14 +6,14 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:34:46 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/27 18:09:24 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/28 00:08:48 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-void create_bureaucrat_test(const std::string& name, int grade) {
+void create_form_test(const std::string& name, int grade) {
     std::cout << "Create Bureaucrat('"<< name << "', " << grade << ") "
               << std::endl;
     try
@@ -27,27 +27,27 @@ void create_bureaucrat_test(const std::string& name, int grade) {
     }
 }
 
-void test_create_bureaucrat_grade_too_low() {
+void test_create_form_grade_too_low() {
     std::cout << "*** " << "test_create_bureaucrat_grade_too_low" << " ***\n";
-    create_bureaucrat_test("wrong", 151);
+    create_form_test("wrong", 151);
     std::cout << std::endl;
 }
 
-void test_create_bureaucrat_grade_too_high() {
+void test_create_form_grade_too_high() {
     std::cout << "*** " << "test_create_bureaucrat_grade_too_high" << " ***\n";
-    create_bureaucrat_test("god", 0);
+    create_form_test("god", 0);
     std::cout << std::endl;
 }
 
-void test_create_bureaucrat_lowest_grade() {
+void test_create_form_lowest_grade() {
     std::cout << "*** " << "test_create_bureaucrat_lowest_grade" << " ***\n";
-    create_bureaucrat_test("looser", 150);
+    create_form_test("looser", 150);
     std::cout << std::endl;
 }
 
-void test_create_bureaucrat_highest_grade() {
+void test_create_form_highest_grade() {
     std::cout << "*** " << "test_create_bureaucrat_highest_grade" << " ***\n";
-    create_bureaucrat_test("Boss", 1);
+    create_form_test("Boss", 1);
     std::cout << std::endl;
 }
 
@@ -130,10 +130,10 @@ void test_decrement_grade() {
 int main(void)
 {
     // Test constructor
-    test_create_bureaucrat_grade_too_low();
-    test_create_bureaucrat_grade_too_high();
-    test_create_bureaucrat_lowest_grade();
-    test_create_bureaucrat_highest_grade();
+    test_create_form_grade_too_low();
+    test_create_form_grade_too_high();
+    test_create_form_lowest_grade();
+    test_create_form_highest_grade();
     test_copy_constructor_and_assignment();
 
     // Test increment and decrement grade
