@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:35:04 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/27 18:04:10 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/09/30 23:30:08 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,33 @@
 #include <iostream>
 #include <string>
 
-class Bureaucrat {
-  public:
+class Bureaucrat
+{
+public:
     Bureaucrat(std::string name, int grade);
-    Bureaucrat(const Bureaucrat& other);
+    Bureaucrat(const Bureaucrat &other);
     ~Bureaucrat();
 
-    Bureaucrat& operator=(const Bureaucrat& other);
-    
+    Bureaucrat &operator=(const Bureaucrat &other);
+
     std::string getName() const;
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
 
-    class GradeTooHighException : public std::exception {
-      public:
+    class GradeTooHighException : public std::exception
+    {
+    public:
         virtual const char *what() const throw();
     };
 
-    class GradeTooLowException : public std::exception {
-      public:
-        virtual const char *what() const throw();  
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
     };
-    
-  private:
+
+private:
     Bureaucrat();
     const std::string _name;
     int _grade;
