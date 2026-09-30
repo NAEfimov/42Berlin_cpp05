@@ -23,6 +23,8 @@ INCS		:= .
 SRCS		:=	main.cpp	\
 				Bureaucrat.cpp \
 				AForm.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
 				PresidentialPardonForm.cpp
 
 OBJ_DIR		:= obj
