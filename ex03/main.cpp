@@ -6,12 +6,10 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 07:34:46 by nefimov           #+#    #+#             */
-/*   Updated: 2026/09/30 23:42:23 by nefimov          ###   ########.fr       */
+/*   Updated: 2026/10/12 14:15:33 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
@@ -26,12 +24,18 @@ int main(void)
     AForm *form;
 
     form = intern.makeForm("shrubbery creation", "garden");
+	std::cout << *form << std::endl;
     delete form;
-    form = intern.makeForm("robotomy request", "Bender");
+    
+	form = intern.makeForm("robotomy request", "Bender");
+	std::cout << *form << std::endl;
     delete form;
-    form = intern.makeForm("presidential pardon", "Arthur Dent");
+    
+	form = intern.makeForm("presidential pardon", "Arthur Dent");
+	std::cout << *form << std::endl;
     delete form;
-    form = intern.makeForm("coffee request", "office");
+    
+	form = intern.makeForm("coffee request", "office");
     delete form;
 
     return 0;
